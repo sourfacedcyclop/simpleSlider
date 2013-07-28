@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+	<meta charset="utf-8">
+		<title>Really Simple Slider Demo #2</title>
+		<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+		<script type="text/javascript" src="jquery.simpleSlider.js"> </script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#bodyStyles').simpleSlider({
+					fadeTime: 1000,
+					autoplay: false,
+					wantNav: false,
+					pauseOnHover: false,
+					keyboardNav: true
+				});
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="demo2.css" />
+	</head> 
+	<body>
+		<div id="bodyStyles">
+			<img class="bodyImage" src="images/backOne.png" alt="" />
+			<img class="bodyImage" src="images/backTwo.png" alt="" />
+			<img class="bodyImage" src="images/backThree.png" alt="" />
+			<img class="bodyImage" src="images/backFour.png" alt="" />
+			<img class="bodyImage" src="images/backFive.png" alt="" />
+		</div>
+		<div id="content">
+			<header>
+				<h1>Simple Slider Demo #2</h1>
+				<h2>Use the arrow keys to naviagate</h2>
+			</header>
+			<pre>
+$('#bodyStyles').simpleSlider({
+	fadeTime: 1000,
+	autoplay: false,
+	wantNav: false,
+	pauseOnHover: false,
+	keyboardNav: true
+});
+			</pre>
+		</div>
+	</body> 
+</html>

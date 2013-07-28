@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+	<meta charset="utf-8">
+		<title>Really Simple Slider</title>
+		<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+		<script type="text/javascript" src="jquery.simpleSlider.js"> </script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#simpleSlider').simpleSlider({
+					interval: 10000,
+					wantNav: true,
+					navContainer: "#sliderContainer",
+					pauseOnHover: true,
+					keyboardNav: false
+				});
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="global.css" />
+	</head> 
+	<body>
+		<header>
+			<h1>Simple Slider Demo</h1>
+		</header>
+		<div id="wrapper">
+			<div id="simpleSliderPrevious"><</div>
+			<div id="simpleSliderNext">></div>
+				<div id="sliderContainer">
+					<ul id="simpleSlider">
+					  <li><img src="images/imageOne.jpg" alt="" /></li>
+					  <li><img src="images/imageTwo.jpg" alt="" /></li>
+					  <li><img src="images/imageThree.jpg" alt="" /></li>
+					  <li><img src="images/imageFour.jpg" alt="" /></li>
+					  <li><img src="images/imageFive.jpg" alt="" /></li>
+					</ul>
+				</div>
+			<br style="clear:both;" />
+			<pre>
+				$('#simpleSlider').simpleSlider({
+					interval: 10000,
+					navContainer: "#wrapper",
+					wantNav: true,
+					pauseOnHover: true,
+					keyboardNav: false
+				});
+				</pre>
+		</div>
+	</body> 
+</html>
