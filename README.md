@@ -10,10 +10,11 @@ SimpleSlider gives some options to best customize its effects to the specific us
 
 **autoplay** is a Boolean that does as it sounds, sets the slider to autoplay.  Default value is true.
 
-**wantNav** is a Boolean that enables or disables slider navigation.  The default is set to true.  This navigation is formatted as…
-<div id=”simpleSLiderNav”>
-	<div class=”simpleSliderNavItem”> </div>
-</div>
+**wantNav** is a Boolean that enables or disables slider navigation.  The default is set to true.  This navigation is formatted asï¿½
+`<div id="simpleSLiderNav">
+	<div class="simpleSliderNavItem"> </div>
+</div>`
+
 Where a simpleSliderNavItem element is created for every slide.  You can formatted this however you wish in CSS.
 
 **navContainer** is the element that the navigation will be appended to should you choose to use it.  The default is set to null, so ensure you assign a value should you wish to enable the navigation.
