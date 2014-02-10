@@ -1,7 +1,7 @@
 /*
 Author : Thomas Scheuneman
 Name : simpleSLider
-Version : 1.0
+Version : 1.01
 Author Site : http://tswebvisions.com
 */
 (function( $ ){
@@ -13,12 +13,12 @@ Author Site : http://tswebvisions.com
 		autoplay: true,
 		container: this,
 		navContainer: null,
-		wantNav: true,
+		wantNav: false,
 		next: "#simpleSliderNext",
 		previous: "#simpleSliderPrevious",
 		interval: 10000,
-		pauseOnHover: true,
-		keyboardNav: true
+		pauseOnHover: false,
+		keyboardNav: false
 	};
 	var settings = $.extend(defaults, options); 
 	return this.each(function() {
@@ -27,10 +27,10 @@ Author Site : http://tswebvisions.com
 		
 		/*
 		Function for running our animation forward, this is engaed on the next slide button, 
-		and on the natural continuation of all other alider actions
+		and on the natural continuation of all other slider actions
 		*/
         function fadeForward() {
-			//Clear any timeout
+			//Clear any timeout(s)
 			timeOut.end()
 			//fadeout current slide
             $(slides[counter]).stop(false, true).fadeOut(settings.fadeTime);
@@ -68,7 +68,7 @@ Author Site : http://tswebvisions.com
             $(slides[counter]).stop(false, true).fadeIn(settings.fadeTime);
             //update progess bar and continue loop
 			timeOut.next();
-			//If we have gone fullcircle, make the right element is removed if the user wants to use the nav
+			//If we have gone fullcircle, make sure the right element is removed if the user wants to use the nav
 			if(settings.wantNav) {
 				if(counter == amount - 1) {
 					$(sliderNavButtons[0]).removeClass("active");		
@@ -81,19 +81,23 @@ Author Site : http://tswebvisions.com
 		function Timer(callback, delay) {
 			//Create variables
 			var timer, start, remainingTime = delay;
+			//Create pause function
 			this.pause = function() {
 				window.clearTimeout(timer);
 				remainingTime -= new Date() - start;
 			};
+			//Create resume function
 			this.resume = function() {
 			if(settings.autoplay) {
 					start = new Date();
 					timer = window.setTimeout(callback, remainingTime);
 				}
 			};
+			//Clear timer function
 			this.end = function() {
 				window.clearTimeout(timer)
 			};
+			//Next slide function
 			this.next = function() {
 				if(settings.autoplay) {
 					timer = window.setTimeout(callback, delay);
@@ -107,9 +111,11 @@ Author Site : http://tswebvisions.com
 		if(settings.pauseOnHover) {
 			jQuery(settings.container).children().on(
 			{
+				//On mouseenter object, pause
 				mouseenter: function() {
 					timeOut.pause();
 				},
+				//On mouseleave object resume.
 				mouseleave: function() {
 					timeOut.resume();
 				}
@@ -118,9 +124,11 @@ Author Site : http://tswebvisions.com
 		//For Keyinput
 		if(settings.keyboardNav) {
 			jQuery(document.documentElement).keydown(function(event) {
+				//If back arrow, fadeBack
 				if(event.keyCode == 37) {
 					fadeBack();
 				}
+				//If forward arrow, fade forward.
 				if(event.keyCode == 39) {
 					fadeForward();
 				}

@@ -10,7 +10,7 @@ SimpleSlider gives some options to best customize its effects to the specific us
 
 **autoplay** is a Boolean that does as it sounds, sets the slider to autoplay.  Default value is true.
 
-**wantNav** is a Boolean that enables or disables slider navigation.  The default is set to true.  This navigation is formatted as�
+**wantNav** is a Boolean that enables or disables slider navigation.  The default is set to false.  This navigation is formatted as�
 `<div id="simpleSLiderNav">
 	<div class="simpleSliderNavItem"> </div>
 </div>`
@@ -23,6 +23,6 @@ Where a simpleSliderNavItem element is created for every slide.  You can formatt
 
 **previous** is an option to choose an element to give the ability to move to the previous slide.  Default is #simpleSliderPrevious
 
-**pauseOnHover** is a Boolean option which tells the slider whether or not it should pause the slider if the user hovers over a slide.  Default value is true.
+**pauseOnHover** is a Boolean option which tells the slider whether or not it should pause the slider if the user hovers over a slide.  Default value is false.
 
-**keyboardNav** is a Boolean option which gives the slider the ability to navigate backwards or forwards with the left and right arrow buttons on the keyboard.  Default value is true.
+**keyboardNav** is a Boolean option which gives the slider the ability to navigate backwards or forwards with the left and right arrow buttons on the keyboard.  Default value is false.
